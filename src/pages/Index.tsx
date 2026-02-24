@@ -298,10 +298,10 @@ export default function Index() {
               <div className="relative">
                 <div className="absolute -inset-8 rounded-full bg-foreground/5 blur-3xl" />
                 <img
-                  src="https://cdn.poehali.dev/projects/5562d4a2-a942-4cc9-bf0e-4372815592b6/files/763d35c5-1426-40d7-b976-7c3751d51ed0.jpg"
+                  src="https://cdn.poehali.dev/projects/5562d4a2-a942-4cc9-bf0e-4372815592b6/bucket/eded5c36-3df1-4ac2-afad-0f8e6ff4b8f4.png"
                   alt="Книга Семитриум"
-                  className="relative z-10 w-72 rounded-xl shadow-2xl lg:w-80"
-                  style={{ filter: "drop-shadow(0 30px 60px rgba(0,0,0,0.5))" }}
+                  className="relative z-10 w-72 lg:w-80"
+                  style={{ mixBlendMode: "lighten", filter: "drop-shadow(0 30px 60px rgba(0,0,0,0.6))" }}
                 />
               </div>
             </div>

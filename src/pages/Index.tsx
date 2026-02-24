@@ -260,35 +260,58 @@ export default function Index() {
         style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
       >
         {/* Hero Section */}
-        <section className="flex min-h-screen w-screen shrink-0 flex-col justify-end px-6 pb-16 pt-24 md:px-12 md:pb-24">
-          <div className="max-w-3xl">
-            <div className="mb-4 inline-block animate-in fade-in slide-in-from-bottom-4 rounded-full border border-foreground/20 bg-foreground/15 px-4 py-1.5 backdrop-blur-md duration-700">
-              <p className="font-mono text-xs text-foreground/90">Не очередная мотивация. Реальный алгоритм.</p>
-            </div>
-            <h1 className="mb-6 animate-in fade-in slide-in-from-bottom-8 font-sans text-5xl font-light leading-[1.1] tracking-tight text-foreground duration-1000 md:text-6xl lg:text-7xl">
-              <span className="text-balance">
-                Хватит бежать быстрее.
-                <br />
-                <span className="text-foreground/50">Пора двигаться точнее.</span>
-              </span>
-            </h1>
-            <p className="mb-3 max-w-xl animate-in fade-in slide-in-from-bottom-4 text-lg leading-relaxed text-foreground/90 duration-1000 delay-200 md:text-xl">
-              <span className="text-pretty">
-                Книга-ключ «Семитриум»: система для тех, кто устал от чужих сценариев, выгорания и иллюзии продуктивности.
-              </span>
-            </p>
-            <div className="flex animate-in fade-in slide-in-from-bottom-4 flex-col gap-4 duration-1000 delay-300 sm:flex-row sm:items-center">
-              <div className="flex flex-col gap-1">
-                <a href="https://t.me/semitrium" target="_blank" rel="noopener noreferrer">
-                  <MagneticButton size="lg" variant="primary">
-                    Получить книгу бесплатно
-                  </MagneticButton>
-                </a>
-                <p className="text-center font-mono text-xs text-foreground/50">PDF-формат. Доступ сразу в Telegram</p>
+        <section className="relative flex min-h-screen w-screen shrink-0 items-center px-6 pb-16 pt-24 md:px-12 md:pb-24">
+          <div className="relative z-10 grid w-full max-w-7xl mx-auto gap-8 md:grid-cols-2 md:gap-12 items-center">
+            <div>
+              <div className="mb-4 inline-block animate-in fade-in slide-in-from-bottom-4 rounded-full border border-foreground/20 bg-foreground/15 px-4 py-1.5 backdrop-blur-md duration-700">
+                <p className="font-mono text-xs text-foreground/90">Не очередная мотивация. Реальный алгоритм.</p>
               </div>
-              <MagneticButton size="lg" variant="secondary" onClick={() => scrollToSection(1)}>
-                Узнать подробнее
-              </MagneticButton>
+              <h1 className="mb-6 animate-in fade-in slide-in-from-bottom-8 font-sans text-5xl font-light leading-[1.1] tracking-tight text-foreground duration-1000 md:text-6xl lg:text-7xl">
+                <span className="text-balance">
+                  Хватит бежать быстрее.
+                  <br />
+                  <span className="text-foreground/50">Пора двигаться точнее.</span>
+                </span>
+              </h1>
+              <p className="mb-6 max-w-xl animate-in fade-in slide-in-from-bottom-4 text-lg leading-relaxed text-foreground/90 duration-1000 delay-200 md:text-xl">
+                <span className="text-pretty">
+                  Книга-ключ «Семитриум»: система для тех, кто устал от чужих сценариев, выгорания и иллюзии продуктивности.
+                </span>
+              </p>
+              <div className="flex animate-in fade-in slide-in-from-bottom-4 flex-col gap-4 duration-1000 delay-300 sm:flex-row sm:items-center">
+                <div className="flex flex-col gap-1">
+                  <a href="https://t.me/semitrium" target="_blank" rel="noopener noreferrer">
+                    <MagneticButton size="lg" variant="primary">
+                      Получить книгу бесплатно
+                    </MagneticButton>
+                  </a>
+                  <p className="text-center font-mono text-xs text-foreground/50">PDF-формат. Доступ сразу в Telegram</p>
+                </div>
+                <MagneticButton size="lg" variant="secondary" onClick={() => scrollToSection(1)}>
+                  Узнать подробнее
+                </MagneticButton>
+              </div>
+            </div>
+
+            {/* Preview iframe */}
+            <div className="hidden md:flex animate-in fade-in slide-in-from-right-8 duration-1000 delay-500 justify-center">
+              <div className="relative w-full max-w-sm">
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-transparent via-transparent to-black/40 z-10 pointer-events-none" />
+                <div className="overflow-hidden rounded-2xl border border-foreground/10 shadow-2xl"
+                  style={{ background: "transparent" }}>
+                  <iframe
+                    src="https://nemesis-iteration--preview.poehali.dev"
+                    className="w-full"
+                    style={{
+                      height: "520px",
+                      border: "none",
+                      background: "transparent",
+                      pointerEvents: "none",
+                    }}
+                    scrolling="no"
+                  />
+                </div>
+              </div>
             </div>
           </div>
 

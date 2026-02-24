@@ -103,9 +103,11 @@ export function AboutSection({ scrollToSection }: { scrollToSection?: (index: nu
           }`}
           style={{ transitionDelay: "850ms" }}
         >
-          <MagneticButton size="lg" variant="primary" onClick={() => scrollToSection?.(4)}>
-            Получить книгу бесплатно
-          </MagneticButton>
+          <a href="https://t.me/semitrium" target="_blank" rel="noopener noreferrer">
+            <MagneticButton size="lg" variant="primary">
+              Получить книгу бесплатно
+            </MagneticButton>
+          </a>
           <MagneticButton size="lg" variant="secondary" onClick={() => scrollToSection?.(2)}>
             Что внутри
           </MagneticButton>

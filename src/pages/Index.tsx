@@ -244,9 +244,11 @@ export default function Index() {
           ))}
         </div>
 
-        <MagneticButton variant="secondary" onClick={() => scrollToSection(4)}>
-          Получить книгу
-        </MagneticButton>
+        <a href="https://t.me/semitrium" target="_blank" rel="noopener noreferrer">
+          <MagneticButton variant="secondary">
+            Получить книгу
+          </MagneticButton>
+        </a>
       </nav>
 
       <div
@@ -277,14 +279,12 @@ export default function Index() {
             </p>
             <div className="flex animate-in fade-in slide-in-from-bottom-4 flex-col gap-4 duration-1000 delay-300 sm:flex-row sm:items-center">
               <div className="flex flex-col gap-1">
-                <MagneticButton
-                  size="lg"
-                  variant="primary"
-                  onClick={() => scrollToSection(4)}
-                >
-                  Получить книгу бесплатно
-                </MagneticButton>
-                <p className="text-center font-mono text-xs text-foreground/50">PDF-формат. Доступ сразу после ввода email</p>
+                <a href="https://t.me/semitrium" target="_blank" rel="noopener noreferrer">
+                  <MagneticButton size="lg" variant="primary">
+                    Получить книгу бесплатно
+                  </MagneticButton>
+                </a>
+                <p className="text-center font-mono text-xs text-foreground/50">PDF-формат. Доступ сразу в Telegram</p>
               </div>
               <MagneticButton size="lg" variant="secondary" onClick={() => scrollToSection(1)}>
                 Узнать подробнее

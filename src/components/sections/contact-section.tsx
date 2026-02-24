@@ -1,27 +1,9 @@
 import { useReveal } from "@/hooks/use-reveal"
-import { useState, type FormEvent } from "react"
 import { MagneticButton } from "@/components/magnetic-button"
 import Icon from "@/components/ui/icon"
 
 export function ContactSection() {
   const { ref, isVisible } = useReveal(0.3)
-  const [email, setEmail] = useState("")
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitSuccess, setSubmitSuccess] = useState(false)
-
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-
-    if (!email) return
-
-    setIsSubmitting(true)
-    await new Promise((resolve) => setTimeout(resolve, 1500))
-    setIsSubmitting(false)
-    setSubmitSuccess(true)
-    setEmail("")
-
-    setTimeout(() => setSubmitSuccess(false), 5000)
-  }
 
   return (
     <section
@@ -43,7 +25,7 @@ export function ContactSection() {
                 <br />
                 <span className="text-foreground/40">бесплатно</span>
               </h2>
-              <p className="font-mono text-xs text-foreground/60 md:text-base">/ PDF-формат. Доступ сразу после ввода email</p>
+              <p className="font-mono text-xs text-foreground/60 md:text-base">/ Переходите в Telegram-канал</p>
             </div>
 
             <div className="space-y-4 md:space-y-6">
@@ -54,7 +36,7 @@ export function ContactSection() {
                 style={{ transitionDelay: "200ms" }}
               >
                 <p className="max-w-md text-sm leading-relaxed text-foreground/80 md:text-base">
-                  Введите свой email — и мы пришлём вам книгу «Семитриум» прямо сейчас. Без спама. Только ценное.
+                  Книга доступна в Telegram-канале. Подпишитесь — и получите её бесплатно, а также полезные материалы по теме.
                 </p>
               </div>
 
@@ -78,73 +60,39 @@ export function ContactSection() {
             </div>
           </div>
 
-          {/* Right side - Email form */}
+          {/* Right side - Telegram CTA */}
           <div className="flex flex-col justify-center">
-            <form onSubmit={handleSubmit} className="space-y-5 md:space-y-8">
+            <div className="space-y-6 md:space-y-10">
               <div
                 className={`transition-all duration-700 ${
                   isVisible ? "translate-x-0 opacity-100" : "translate-x-16 opacity-0"
                 }`}
                 style={{ transitionDelay: "200ms" }}
               >
-                <label className="mb-2 block font-mono text-xs text-foreground/60 md:mb-3">
-                  Ваш Email
-                </label>
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                  className="w-full border-b border-foreground/30 bg-transparent py-2 text-base text-foreground placeholder:text-foreground/40 focus:border-foreground/60 focus:outline-none md:text-lg"
-                  placeholder="your@email.com"
-                />
-              </div>
-
-              <div
-                className={`transition-all duration-700 ${
-                  isVisible ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
-                }`}
-                style={{ transitionDelay: "400ms" }}
-              >
-                <div className="flex flex-col gap-2">
-                  <MagneticButton
-                    variant="primary"
-                    size="lg"
-                    className="w-full disabled:opacity-50"
-                  >
-                    {isSubmitting ? "Отправляем..." : "Получить книгу бесплатно →"}
-                  </MagneticButton>
-                  <p className="text-center font-mono text-xs text-foreground/40">
-                    PDF-формат · Доступ сразу
+                <div className="rounded-2xl border border-foreground/10 bg-foreground/5 p-6 backdrop-blur-sm md:p-8">
+                  <div className="mb-4 flex items-center gap-3">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-foreground/10">
+                      <Icon name="Send" size={18} className="text-foreground/80" />
+                    </div>
+                    <div>
+                      <p className="font-sans text-sm font-medium text-foreground">Telegram-канал</p>
+                      <p className="font-mono text-xs text-foreground/50">@semitrium</p>
+                    </div>
+                  </div>
+                  <p className="mb-6 text-sm leading-relaxed text-foreground/70">
+                    Подпишитесь на канал — там вас ждёт книга «Семитриум» и регулярные материалы о том, как жить осмысленно.
+                  </p>
+                  <a href="https://t.me/semitrium" target="_blank" rel="noopener noreferrer">
+                    <MagneticButton variant="primary" size="lg" className="w-full">
+                      Открыть канал →
+                    </MagneticButton>
+                  </a>
+                  <p className="mt-3 text-center font-mono text-xs text-foreground/40">
+                    Бесплатно · Сразу · Без регистрации
                   </p>
                 </div>
-                {submitSuccess && (
-                  <p className="mt-4 text-center font-mono text-sm text-foreground/80">
-                    ✅ Готово! Проверьте почту — книга уже там.
-                  </p>
-                )}
               </div>
-
-              <div
-                className={`pt-2 transition-all duration-700 md:pt-4 ${
-                  isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
-                }`}
-                style={{ transitionDelay: "600ms" }}
-              >
-                <p className="mb-3 font-mono text-xs text-foreground/50">Или свяжитесь напрямую</p>
-                <div className="flex gap-4">
-                  {["Telegram", "VK"].map((social) => (
-                    <a
-                      key={social}
-                      href="#"
-                      className="border-b border-transparent font-mono text-xs text-foreground/60 transition-all hover:border-foreground/60 hover:text-foreground/90"
-                    >
-                      {social}
-                    </a>
-                  ))}
-                </div>
-              </div>
-            </form>
+            </div>
           </div>
         </div>
       </div>

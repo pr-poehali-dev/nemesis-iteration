@@ -293,24 +293,16 @@ export default function Index() {
               </div>
             </div>
 
-            {/* Preview iframe */}
-            <div className="hidden md:flex animate-in fade-in slide-in-from-right-8 duration-1000 delay-500 justify-center">
-              <div className="relative w-full max-w-sm">
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-transparent via-transparent to-black/40 z-10 pointer-events-none" />
-                <div className="overflow-hidden rounded-2xl border border-foreground/10 shadow-2xl"
-                  style={{ background: "transparent" }}>
-                  <iframe
-                    src="https://nemesis-iteration--preview.poehali.dev"
-                    className="w-full"
-                    style={{
-                      height: "520px",
-                      border: "none",
-                      background: "transparent",
-                      pointerEvents: "none",
-                    }}
-                    scrolling="no"
-                  />
-                </div>
+            {/* Book cover */}
+            <div className="hidden md:flex animate-in fade-in slide-in-from-right-8 duration-1000 delay-500 justify-center items-center">
+              <div className="relative">
+                <div className="absolute -inset-8 rounded-full bg-foreground/5 blur-3xl" />
+                <img
+                  src="https://cdn.poehali.dev/projects/5562d4a2-a942-4cc9-bf0e-4372815592b6/files/763d35c5-1426-40d7-b976-7c3751d51ed0.jpg"
+                  alt="Книга Семитриум"
+                  className="relative z-10 w-72 rounded-xl shadow-2xl lg:w-80"
+                  style={{ filter: "drop-shadow(0 30px 60px rgba(0,0,0,0.5))" }}
+                />
               </div>
             </div>
           </div>
